@@ -1,0 +1,165 @@
+@font-face {
+font-family: "Sch";
+src: url("fonts/Schwabacher.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Isabella";
+    src: url("fonts/Isabella.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    overflow: hidden;
+}
+
+.display-none {
+    display: none;
+}
+
+.start-page {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.start-bg-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+.bg-shadow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /*background: rgba(255, 255, 255, 0.3);*/
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.start-page-main-info {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-page-text {
+    width: 50%;
+    height: 50%;
+    padding: 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    /*font-family: Sch, serif;*/
+    font-family: Isabella, sans-serif;
+    color: #512C18;
+    font-size: 38px;
+    background: url("/media/img/svitok_mini.png") no-repeat;
+    background-size: 100% 100%;
+    /*background-color: rgba(0, 0, 0, 0.4);*/
+    border-radius: 15px;
+}
+/*.start-page-text span {*/
+/*    margin: 0 30px;*/
+/*}*/
+
+.start-button {
+    border: none;
+    width: 220px;
+    height: 70px;
+    font-family: Isabella, serif;
+    font-size: 45px;
+    border-radius: 15px;
+    transition: 0.5s;
+    color: #512C18;
+    /*background-color: rgba(255, 255, 255, 0.9);*/
+    background-color: rgba(195, 152, 96, 0.4);
+}
+
+.start-button:hover {
+    /*background-color: rgba(0, 0, 0, 0.9);*/
+    background-color: rgba(81, 44, 24, 0.9);
+    color: rgba(195, 152, 96, 0.9);
+    font-size: 50px;
+    transition: 0.5s;
+}
+
+.hero-select {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.heroes {
+    width: 70%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-card {
+    width: 300px;
+    height: 500px;
+    border: 15px solid rgba(81, 44, 24, 1);
+    border-radius: 30px;
+    background-color: rgba(195, 152, 96, 1);
+}
+
+.hero-description {
+
+}
+
+#peasant-card {
+    background-image: url("media/img/aleksandra-mokrzycka-peasant.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+#peasant-description {}
+
+#thief-card {
+    background-image: url("media/img/aleksandra-mokrzycka-thief.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+#thief-description {}
+
+#nobleman-card {
+    background-image: url("media/img/elayne-neves-nobleman.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+#nobleman-description {}
+
+.game {
+
+}

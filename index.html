@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<!--    <link rel="shortcut icon" href="castle.ico" type="image/x-icon">-->
+<!--    <link rel="icon" href="castle.ico" type="image/x-icon">-->
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen, projection">
+    <title>CastleGame</title>
+    <meta name="keywords" content="игра, карты, средневековье, крестьяне">
+    <meta name="description" content="Карточная сюжетная игра">
+</head>
+<body>
+    <div class="start-page">
+        <video loop="loop" autoplay="autoplay" preload="auto" class="start-bg-video">
+            <source src="media/video/start.mp4" type="video/mp4">
+<!--            <source src="media/video/start.webm" type="video/webm">-->
+        </video>
+        <div class="bg-shadow"></div>
+        <div class="start-page-main-info">
+            <div class="start-page-text">
+                <span>CastleGame - это игра, где ты сможешь примерить на себя роль одного из трех героев, судьбы которых сильнейшим образом переплетены. На твои плечи ляжет обязанность провести каждого из них через все испытания и постараться, чтобы все они выжили, ведь каждый из них влияет на судьбу других. И кто знает как повернется история если одного из них не станет... </span>
+                <button id="start" class="start-button">Начать</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="hero-select display-none">
+        <div class="heroes">
+            <div id="peasant" class="hero">
+                <div id="peasant-card" class="hero-card"></div>
+                <div id="peasant-description" class="hero-description"></div>
+            </div>
+            <div id="thief" class="hero">
+                <div id="thief-card" class="hero-card"></div>
+                <div id="thief-description" class="hero-description"></div>
+            </div>
+            <div id="nobleman" class="hero">
+                <div id="nobleman-card" class="hero-card"></div>
+                <div id="nobleman-description" class="hero-description"></div>
+            </div>
+        </div>
+    </div>
+    <div class="game display-none"></div>
+    <script src="script.js"></script>
+</body>
+</html>
