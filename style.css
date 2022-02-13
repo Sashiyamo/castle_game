@@ -14,10 +14,8 @@ src: url("fonts/Schwabacher.ttf") format("truetype");
 
 body {
     overflow: hidden;
-}
-
-.display-none {
-    display: none;
+    margin: 0;
+    font-family: Isabella, serif;
 }
 
 .start-page {
@@ -36,6 +34,11 @@ body {
     z-index: 0;
 }
 
+/*.bg-shadow-start {*/
+/*    background-color: rgba(0, 0, 0, 0.9);*/
+/*    transition: 10s;*/
+/*}*/
+
 .bg-shadow {
     position: absolute;
     left: 0;
@@ -44,7 +47,8 @@ body {
     height: 100%;
     z-index: 1;
     /*background: rgba(255, 255, 255, 0.3);*/
-    background: rgba(0, 0, 0, 0.6);
+    /*background: rgba(0, 0, 0, 0.6);*/
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 .start-page-main-info {
@@ -101,23 +105,64 @@ body {
 }
 
 .hero-select {
+    position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    /*background-color: black;*/
+}
+
+.hero-select-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    background-image: url("media/img/aaron-limonick-limonick-kingdom.jpg");
+    background-size: 100% 100%;
+    animation-duration: 10s;
+    animation-name: bg-animation;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bg-animation {
+    0% {
+        width: 100%;
+        height: 100%;
+    }
+    50% {
+        width: 103%;
+        height: 103%;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.hero-select-text {
+    /*margin-bottom: 20px;*/
+    padding: 0 10px;
+    color: gold;
+    font-size: 72px;
+    font-family: Isabella, serif;
+    z-index: 3;
     background-color: black;
 }
 
 .heroes {
     width: 70%;
-    height: 50%;
+    height: 63%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 3;
 }
 
 .hero {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,15 +172,141 @@ body {
 .hero-card {
     width: 300px;
     height: 500px;
-    border: 15px solid rgba(81, 44, 24, 1);
+    /*border: 10px solid rgba(81, 44, 24, 1);*/
+    border: 10px solid black;
     border-radius: 30px;
     background-color: rgba(195, 152, 96, 1);
 }
 
-.hero-description {
+.hero-card-active {
+    border-color: gold;
+    transition: 0.5s;
+}
+
+.hero-card:hover {
+    border-color: gold;
+    transition: 0.5s;
+}
+
+.hero-card-border {
+    margin: 5px 10px;
+    /*border: 2px solid rgba(81, 44, 24, 1);*/
+    /*border-radius: 35px;*/
 
 }
 
+/*.hero-card-border-active {*/
+/*    border-color: gold;*/
+/*}*/
+
+/*.hero-card-border:hover {*/
+/*    border-color: gold;*/
+/*    animation-duration: 5s;*/
+/*    animation-name: card-animated;*/
+/*    animation-iteration-count: infinite;*/
+/*}*/
+
+@keyframes card-animated {
+    0% {
+        margin: 5px 10px;
+    }
+
+    20% {
+        margin: 7px 9px 3px 11px;
+    }
+
+    40% {
+        margin: 2px 9px 8px 11px;
+    }
+
+    60% {
+        margin: 3px 11px 7px 9px;
+    }
+
+    80% {
+        margin: 8px 11px 2px 9px;
+    }
+
+    100% {
+        margin: 5px 10px;
+    }
+}
+
+.hero-name {
+    width: 70%;
+    height: 10%;
+    background-color: black;
+    color: gold;
+    font-size: 36px;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.descriptions {
+    width:67%;
+    height: 15%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.text {
+    width: 90%;
+    height: 100%;
+    font-size: 24px;
+    padding: 0 15px;
+    background-color: black;
+    /*border-right: 2px solid gold;*/
+    color: gold;
+    z-index: 4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-description {
+    /*display: block;*/
+    transition: 1.5s;
+}
+
+.hero-description-hide {
+    display: none;
+    /*background-color: rgba(255, 255, 255, 0);*/
+    width: 0;
+    font-size: 0;
+}
+
+.to-journey {
+    border: 2px solid black;
+    background-color: black;
+    color: gold;
+    height: 100%;
+    width: 10%;
+    font-size: 24px;
+    font-family: Isabella, serif;
+}
+
+.to-journey-hide {
+    display: none;
+}
+
+.to-journey:hover {
+    border-color: gold;
+}
+
+
+.peasant-select-bg {
+    background-image: url("media/img/philipp-a-urlich-oldhouse3-4b.jpg");
+    transition: background 1s ease;
+}
 #peasant-card {
     background-image: url("media/img/aleksandra-mokrzycka-peasant.png");
     background-repeat: no-repeat;
@@ -144,6 +315,10 @@ body {
 }
 #peasant-description {}
 
+.thief-select-bg {
+    background-image: url("media/img/connor-sheehan-forest-scene-01-final-02.jpg");
+    transition: background 1s ease;
+}
 #thief-card {
     background-image: url("media/img/aleksandra-mokrzycka-thief.png");
     background-repeat: no-repeat;
@@ -152,6 +327,10 @@ body {
 }
 #thief-description {}
 
+.noble-select-bg {
+    background-image: url("media/img/cliff-schonewill-highresscreenshot00006.jpg");
+    transition: background 1s ease;
+}
 #nobleman-card {
     background-image: url("media/img/elayne-neves-nobleman.png");
     background-repeat: no-repeat;
@@ -161,5 +340,149 @@ body {
 #nobleman-description {}
 
 .game {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.game-main-window {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ways {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 3;
+}
+
+.game-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    background-image: none;
+    background-size: 100% 100%;
+    animation-duration: 10s;
+    animation-name: bg-animation;
+    animation-iteration-count: infinite;
+}
+
+.way-card {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    /*border: 10px solid rgba(81, 44, 24, 1);*/
+    border: 10px solid black;
+    border-radius: 30px;
+    background-color: rgba(195, 152, 96, 1);
+}
+
+.way-card-active {
+    border-color: gold;
+    transition: 0.5s;
+}
+
+.way-card:hover {
+    border-color: gold;
+    transition: 0.5s;
+}
+
+.way-texts {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    background-color: black;
+    z-index: 3;
+}
+
+.way-text {
+
+}
+
+.select {
+    /*border: none;*/
+    width: 220px;
+    height: 70px;
+    font-family: Isabella, serif;
+    font-size: 45px;
+    border: 2px solid black;
+    border-radius: 15px;
+    transition: 0.5s;
+    color: gold;
+    background-color: black;
+    z-index: 5;
+}
+
+.select:hover {
+    /*background-color: rgba(0, 0, 0, 0.9);*/
+    /*background-color: gold;*/
+    /*color: black;*/
+    border-color: gold;
+    /*font-size: 50px;*/
+    transition: 0.5s;
+}
+
+.way0, .way1 {
+    background: none no-repeat;
+    background-size: 100% 100%;
+}
+
+.next-button {
+    border: 2px solid black;
+    background-color: black;
+    color: gold;
+    height: 100%;
+    width: 10%;
+    font-size: 24px;
+    font-family: Isabella, serif;
+}
+
+.next-button:hover {
+    border-color: gold;
+}
+
+.next-button-inactive {
+    border: 2px solid black;
+    background-color: black;
+    /*color: goldenrod;*/
+    color: black;
+    height: 100%;
+    width: 10%;
+    font-size: 24px;
+    font-family: Isabella, serif;
+}
+
+
+.way-info {
+    width: 90%;
+    /*height: 10%;*/
+    padding: 10px 0;
+    margin: 0 5%;
+    background-color: black;
+    color: gold;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    /*left: 25%;*/
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border-radius: 15px;*/
+}
+
+.display-none {
+    display: none;
 }

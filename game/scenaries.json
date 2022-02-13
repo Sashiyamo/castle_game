@@ -1,0 +1,113 @@
+{
+  "1_0": {
+    "node": "1_0",
+    "background": "castle_gate_by_jonathandufresne_d7uxbmw-fullview.png",
+    "texts": ["вы пришли", "вы молодец"],
+    "way0": {
+      "next" : "1_00",
+      "images": {
+        "1": "gate_peoples.png",
+        "2": ""
+      },
+      "sounds": {
+        "1": "",
+        "2": ""
+      },
+      "texts": ["Подойти к мальчику"],
+      "animations": {
+        "1": "",
+        "2": ""
+      }
+    },
+    "way1": {
+      "next" : "1_01",
+      "images": {
+        "1": "gate_guardian.png",
+        "2": ""
+      },
+      "sounds": {
+        "1": "",
+        "2": ""
+      },
+      "texts": ["Подойти к стражнику"],
+      "animations": {
+        "1": "",
+        "2": ""
+      }
+    }
+  },
+  "1_00": {
+    "node": "1_00",
+    "background": "castle_gate_by_jonathandufresne_d7uxbmw-fullview.png",
+    "texts": ["вы пришли", "вы молодец"],
+    "way0": {
+      "next" : "1_000",
+      "images": {
+        "1": "",
+        "2": ""
+      },
+      "sounds": {
+        "1": "",
+        "2": ""
+      },
+      "texts": ["вы пришли"],
+      "animations": {
+        "1": "",
+        "2": ""
+      }
+    },
+    "way1": {
+      "next" : "1_001",
+      "images": {
+        "1": "",
+        "2": ""
+      },
+      "sounds": {
+        "1": "",
+        "2": ""
+      },
+      "texts": ["вы пришли"],
+      "animations": {
+        "1": "",
+        "2": ""
+      }
+    }
+  },
+  "1_01": {
+    "node": "1_01",
+    "background": "castle_gate_by_jonathandufresne_d7uxbmw-fullview.png",
+    "texts": ["вы пришли", "вы молодец"],
+    "way0": {
+      "next" : "1_010",
+      "images": {
+        "1": "",
+        "2": ""
+      },
+      "sounds": {
+        "1": "",
+        "2": ""
+      },
+      "texts": ["вы пришли"],
+      "animations": {
+        "1": "",
+        "2": ""
+      }
+    },
+    "way1": {
+      "next" : "1_011",
+      "images": {
+        "1": "",
+        "2": ""
+      },
+      "sounds": {
+        "1": "",
+        "2": ""
+      },
+      "texts": ["вы пришли"],
+      "animations": {
+        "1": "",
+        "2": ""
+      }
+    }
+  }
+}

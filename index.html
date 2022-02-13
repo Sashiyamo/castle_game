@@ -26,22 +26,81 @@
         </div>
     </div>
     <div class="hero-select display-none">
+        <div class="hero-select-bg"></div>
+        <div class="bg-shadow"></div>
+        <div class="hero-select-text">
+            <span>Выбор истории</span>
+        </div>
         <div class="heroes">
             <div id="peasant" class="hero">
-                <div id="peasant-card" class="hero-card"></div>
-                <div id="peasant-description" class="hero-description"></div>
+                <div class="hero-card-border">
+                    <div id="peasant-card" class="hero-card"></div>
+                </div>
+                <div id="peasant-name" class="hero-name">
+                    <span class="name">Грегори</span>
+                </div>
             </div>
             <div id="thief" class="hero">
-                <div id="thief-card" class="hero-card"></div>
-                <div id="thief-description" class="hero-description"></div>
+                <div class="hero-card-border">
+                    <div id="thief-card" class="hero-card"></div>
+                </div>
+                <div id="thief-name" class="hero-name">
+                    <span class="name">Иэн</span>
+                </div>
             </div>
             <div id="nobleman" class="hero">
-                <div id="nobleman-card" class="hero-card"></div>
-                <div id="nobleman-description" class="hero-description"></div>
+                <div class="hero-card-border">
+                    <div id="nobleman-card" class="hero-card"></div>
+                </div>
+                <div id="nobleman-name" class="hero-name">
+                    <span class="name">Кристиан</span>
+                </div>
             </div>
         </div>
+        <div class="descriptions">
+            <div id="peasant-description" class="text hero-description hero-description-hide">
+            <span class="long-description">
+                Грегори - простой сельский паренек, живущий в деревне под стенами величественного города. Мама мальчика умерла, когда ему было всего 5 лет и он остался жить с дальними родственниками в деревне. Живя в бедной крестьянской семье, мальчик научился выживать и выполнять самую сложную физическую работу. В один момент он понимает, что жизнь в селе ему не по душе, и отправляется в огромный незнакомый город, чтобы разбогатеть и прославиться...
+            </span>
+            </div>
+            <div id="thief-description" class=" text hero-description hero-description-hide">
+            <span class="long-description">
+                 Иэн - сын главаря бандитов, отравляющих дороги и тракты торговой столицы. Он вырос в лесном лагере и с самого детства учился только способам убийства и воровства. И вот все ближе приближался тот миг, когда все больше казалось, что банда вот-вот распадется от все уменьшающегося количества слабоохраняемых торговых караванов. Но в один вечер в разбойничьем лагере вдруг появился странный гость, и кто знает, какие вести он принес...
+            </span>
+            </div>
+            <div id="nobleman-description" class="text hero-description hero-description-hide">
+            <span class="long-description">
+                Кристиан - сын одного из самых богатых дворянских родов в королевстве. Он вырос при дворе, с юношества учился фехтованию и грамоте. Что ни говори, но даже из самых образованных аристократских детей он очень сильно выделялся. Хоть он и вырос в доме богатых родителей, но ему не были чужды сочувствие и сострадание, при любой возможности он помогал слабым и обиженным на улицах не такого уж и аристократического города...
+            </span>
+            </div>
+            <button class="to-journey to-journey-hide">В путь!</button>
+        </div>
     </div>
-    <div class="game display-none"></div>
+    <div class="game display-none">
+        <div class="game-bg"></div>
+        <div class="bg-shadow"></div>
+        <div class="game-main-window">
+            <div class="way-texts">
+                <div class="text">
+                    <span class="way-text"></span>
+                </div>
+                <button class="next next-button">Далее</button>
+            </div>
+            <div class="ways">
+                <div class="way0 way-card">
+                    <div class="way-info">
+                        <span class="way0-text"></span>
+                    </div>
+                </div>
+                <div class="way1 way-card">
+                    <div class="way-info">
+                        <span class="way1-text"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="select">ОК</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

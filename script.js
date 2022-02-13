@@ -3,6 +3,118 @@ document.getElementById("start").addEventListener('click', function () {
     document.querySelector('.start-page').classList.add('display-none')
 })
 
+document.getElementById("peasant").addEventListener('click', function () {
+    document.getElementById("peasant-card").classList.add('hero-card-active')
+    document.getElementById("thief-card").classList.remove('hero-card-active')
+    document.getElementById("nobleman-card").classList.remove('hero-card-active')
+
+    document.querySelector(".hero-select-bg").classList.add('peasant-select-bg')
+    document.querySelector(".hero-select-bg").classList.remove('thief-select-bg')
+    document.querySelector(".hero-select-bg").classList.remove('noble-select-bg')
+
+    document.getElementById('thief-description').classList.add('hero-description-hide')
+    document.getElementById('nobleman-description').classList.add('hero-description-hide')
+    document.getElementById('peasant-description').classList.remove('hero-description-hide')
+
+    document.querySelector(".to-journey").classList.remove('to-journey-hide')
+})
+
+document.getElementById("thief").addEventListener('click', function () {
+    document.getElementById("thief-card").classList.add('hero-card-active')
+    document.getElementById("peasant-card").classList.remove('hero-card-active')
+    document.getElementById("nobleman-card").classList.remove('hero-card-active')
+
+    document.querySelector(".hero-select-bg").classList.add('thief-select-bg')
+    document.querySelector(".hero-select-bg").classList.remove('peasant-select-bg')
+    document.querySelector(".hero-select-bg").classList.remove('noble-select-bg')
+
+    document.getElementById('peasant-description').classList.add('hero-description-hide')
+    document.getElementById('nobleman-description').classList.add('hero-description-hide')
+    document.getElementById('thief-description').classList.remove('hero-description-hide')
+
+    document.querySelector(".to-journey").classList.remove('to-journey-hide')
+})
+
+document.getElementById("nobleman").addEventListener('click', function () {
+    document.getElementById("nobleman-card").classList.add('hero-card-active')
+    document.getElementById("peasant-card").classList.remove('hero-card-active')
+    document.getElementById("thief-card").classList.remove('hero-card-active')
+
+    document.querySelector(".hero-select-bg").classList.add('noble-select-bg')
+    document.querySelector(".hero-select-bg").classList.remove('peasant-select-bg')
+    document.querySelector(".hero-select-bg").classList.remove('thief-select-bg')
+
+    document.getElementById('peasant-description').classList.add('hero-description-hide')
+    document.getElementById('thief-description').classList.add('hero-description-hide')
+    document.getElementById('nobleman-description').classList.remove('hero-description-hide')
+
+    document.querySelector(".to-journey").classList.remove('to-journey-hide')
+})
+
+document.querySelector(".to-journey").addEventListener('click', function () {
+    document.querySelector('.game').classList.remove('display-none')
+    document.querySelector('.hero-select').classList.add('display-none')
+
+    startNode('1_0')
+})
+
+document.querySelectorAll(".way-card").forEach(function (e) {
+    e.addEventListener('click', function (ev) {
+        document.querySelectorAll(".way-card").forEach(function (e) {
+            e.classList.remove("way-card-active")
+        })
+        ev.target.classList.add("way-card-active")
+    })
+})
+
+document.querySelector(".select").addEventListener('click', function () {
+    let ways = document.querySelectorAll(".way-card")
+    if (ways[0].classList.contains("way-card-active")) {
+        startNode(localStorage.getItem("game_node") + 0)
+    } else if (ways[1].classList.contains("way-card-active")) {
+        startNode(localStorage.getItem("game_node") + 1)
+    } else alert("Выберите один из путей!")
+})
+
+function startText(texts, textInd = 0) {
+    let el = document.querySelector(".next")
+    let clone = el.cloneNode(true)
+    el.parentNode.replaceChild(clone, el)
+
+    document.querySelector(".way-text").innerHTML = texts[textInd]
+    // console.log(texts)
+    // console.log(textInd)
+
+    if (textInd < texts.length - 1) {
+        document.querySelector(".next").addEventListener('click', function () {
+            startText(texts, ++textInd)
+        })
+    } else {
+        document.querySelector(".next").classList.add("next-button-inactive")
+        document.querySelector(".next").classList.remove("next-button")
+    }
+}
+
+function startNode(nodeID) {
+    fetch("game/scenaries.json")
+        .then(response => {
+            return response.json();
+        })
+        .then(game => {
+            localStorage.setItem("game_node", nodeID)
+            // console.log("all is ok")
+            // console.log(game)
+
+            document.querySelector(".game-bg").style.backgroundImage = 'url("/media/img/' + nodeID[0] + '/' + game[nodeID].background + '")'
+            document.querySelector(".way0").style.backgroundImage = 'url("/media/img/' + nodeID[0] + '/' + game[nodeID]["way0"]["images"]["1"] + '")'
+            document.querySelector(".way1").style.backgroundImage = 'url("/media/img/' + nodeID[0] + '/' + game[nodeID]["way1"]["images"]["1"] + '")'
+            document.querySelector(".way0-text").innerHTML = game[nodeID]["way0"]["texts"][0]
+            document.querySelector(".way1-text").innerHTML = game[nodeID]["way1"]["texts"][0]
+
+            startText(game[nodeID]["texts"])
+        });
+}
+
 
 
 
