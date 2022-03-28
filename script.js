@@ -55,7 +55,7 @@ document.querySelector(".to-journey").addEventListener('click', function () {
     document.querySelector('.game').classList.remove('display-none')
     document.querySelector('.hero-select').classList.add('display-none')
 
-    startNode('1_0')
+    startNode('11_0')
 })
 
 document.querySelectorAll(".way-card").forEach(function (e) {
@@ -70,9 +70,11 @@ document.querySelectorAll(".way-card").forEach(function (e) {
 document.querySelector(".select").addEventListener('click', function () {
     let ways = document.querySelectorAll(".way-card")
     if (ways[0].classList.contains("way-card-active")) {
-        startNode(localStorage.getItem("game_node") + 0)
+        // startNode(localStorage.getItem("game_node") + 0)
+        startNode(localStorage.getItem("game_node_next_0"))
     } else if (ways[1].classList.contains("way-card-active")) {
-        startNode(localStorage.getItem("game_node") + 1)
+        // startNode(localStorage.getItem("game_node") + 1)
+        startNode(localStorage.getItem("game_node_next_1"))
     } else alert("Выберите один из путей!")
 })
 
@@ -101,7 +103,42 @@ function startNode(nodeID) {
             return response.json();
         })
         .then(game => {
+            let history = JSON.parse(localStorage.getItem("game_history"))
+            if (history == null) history = []
+            if (history != null && history[history.length - 1] != localStorage.getItem("game_node")) {
+                history.push(localStorage.getItem("game_node"))
+            }
+            localStorage.setItem("game_history", JSON.stringify(history))
+
+            localStorage.setItem("game_node_prev", localStorage.getItem("game_node"))
             localStorage.setItem("game_node", nodeID)
+
+            // for (let i game[nodeID]["way0"]["nexts"]["count"]) {
+            //
+            // }
+            for (let e in game[nodeID]["way0"]["nexts"]) {
+                let all_conditions = true
+                for (let cond in e["condition"]){
+                    if (!JSON.parse(localStorage.getItem("game_history")).contains(cond)) {
+                        all_conditions = false
+                    }
+                }
+                if (all_conditions) {
+                    localStorage.setItem("game_node_next_0", e["next"])
+                }
+            }
+
+            for( let e in game[nodeID]["way1"]["nexts"]) {
+                let all_conditions = true
+                for (let cond in e["condition"]){
+                    if (!JSON.parse(localStorage.getItem("game_history")).contains(cond)) {
+                        all_conditions = false
+                    }
+                }
+                if (all_conditions) {
+                    localStorage.setItem("game_node_next_1", e["next"])
+                }
+            }
             // console.log("all is ok")
             // console.log(game)
 
@@ -113,6 +150,15 @@ function startNode(nodeID) {
 
             startText(game[nodeID]["texts"])
         });
+}
+
+if (localStorage.getItem("game_node") != null && localStorage.getItem("game_node") != "") {
+    document.querySelector('.game').classList.remove('display-none')
+    document.querySelector('.hero-select').classList.add('display-none')
+    document.querySelector('.start-page').classList.add('display-none')
+
+    // startNode(localStorage.getItem("game_node"))
+    startNode("11_0")
 }
 
 
