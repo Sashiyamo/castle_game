@@ -153,12 +153,12 @@ function startNode(nodeID) {
 }
 
 if (localStorage.getItem("game_node") != null && localStorage.getItem("game_node") != "") {
-    document.querySelector('.game').classList.remove('display-none')
-    document.querySelector('.hero-select').classList.add('display-none')
-    document.querySelector('.start-page').classList.add('display-none')
-
-    // startNode(localStorage.getItem("game_node"))
-    startNode("11_0")
+    // document.querySelector('.game').classList.remove('display-none')
+    // document.querySelector('.hero-select').classList.add('display-none')
+    // document.querySelector('.start-page').classList.add('display-none')
+    //
+    // // startNode(localStorage.getItem("game_node"))
+    // startNode("11_0")
 }
 
 
