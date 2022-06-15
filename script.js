@@ -32,7 +32,7 @@ document.getElementById("thief").addEventListener('click', function () {
     document.getElementById('nobleman-description').classList.add('hero-description-hide')
     document.getElementById('thief-description').classList.remove('hero-description-hide')
 
-    document.querySelector(".to-journey").classList.remove('to-journey-hide')
+    document.querySelector(".to-journey").classList.add('to-journey-hide')
 })
 
 document.getElementById("nobleman").addEventListener('click', function () {
@@ -48,7 +48,7 @@ document.getElementById("nobleman").addEventListener('click', function () {
     document.getElementById('thief-description').classList.add('hero-description-hide')
     document.getElementById('nobleman-description').classList.remove('hero-description-hide')
 
-    document.querySelector(".to-journey").classList.remove('to-journey-hide')
+    document.querySelector(".to-journey").classList.add('to-journey-hide')
 })
 
 document.querySelector(".to-journey").addEventListener('click', function () {
